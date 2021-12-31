@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name= "viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="It supply">
-<meta name="keyword" content="It infrastructure, Henrochie limited">
-<title> Henrochie Limited </title>
+<meta name="description" content="Providing Technology business solutions for small, medium, and large enterprises.">
+<meta name="keyword" content="Henrochie limited, It infrastructure, Information technology, It supply">
+<title> Henrochie Limited - Providing Technology business solutions for small, medium, and large enterprises. </title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="assets/img/favicon.ico" rel="icon">
@@ -33,7 +33,7 @@
         <div class="hflex2">
 
         <div class="logoo">
-            <a href="index.html"> <img src="images/henrologowhite.png" width="100px" alt="tech company in port harcourt"> </a>
+            <a href="index.html"> <img src="images/henrologowhite.png" width="100px" alt="Henrochielimited"> </a>
         </div>
         
             <button class="menu"  onclick="menutoggle()">
@@ -61,7 +61,7 @@
         <div class="hflex">
             
             <div class="logo">
-                <a href="index.html"> <img src="images/henrologowhite.png" width="100px" alt="tech company in Nigeria"> </a>
+                <a href="index.html"> <img src="images/henrologowhite.png" width="100px" alt="Henrochie Limited"> </a>
             </div> 
          
             <div class="links"> 
@@ -117,19 +117,19 @@
      </div>
 
      <div class="col22">
-         <img src="images/henimage.jpg">
+         <img src="images/henimage.jpg" alt="technology company">
      </div>
 
  </div>
 
  <!-- services -->
 
- <div class="cardflex"> 
+ <div class="cardflex reveal"> 
 
  <div class="card">
      
      <div class="circle">
-         <img src="images/itoutso.png" width="90px">
+         <img src="images/itoutso.png" width="90px" alt="technology company in port harcourt">
         </div>
 
     <div class="cardbody">
@@ -195,7 +195,7 @@
 
  <!-- services -->
 
- <div class="cardflex"> 
+ <div class="cardflex reveal"> 
    
         <!-- 2nd -->
    
@@ -240,7 +240,7 @@
            <div class="card">
         
                <div class="circle">
-                   <img src="images/consumerization.png" width="90px">
+                   <img src="images/consumerization.png" width="90px" alt="final consumer logo">
                   </div>
           
               <div class="cardbody">
@@ -261,12 +261,12 @@
  
             <!-- services -->
 
- <div class="cardflex"> 
+ <div class="cardflex reveal"> 
 
     <div class="card">
         
         <div class="circle">
-            <img src="images/barite.png" width="90px">
+            <img src="images/barite.png" width="90px" alt="milled barite">
            </div>
    
        <div class="cardbody">
@@ -340,7 +340,7 @@
 <div class="imgtxtflex">
 
     <div class="leftimg">
-        <img src="images/whyus1.png" width="650px">
+        <img src="images/whyus1.png" width="650px" alt="Henrochie limited">
     </div>
     
     <div class="hway1">
@@ -511,7 +511,7 @@
     </div>
 
      <div class="cccontainer">
-    <p class="copyright"> Copyright © Henrochielimited 2021 - All-rights-reserved </p>
+    <p class="copyright"> Copyright © Henrochielimited <span id="date"></span> - All-rights-reserved </p>
     <p class="copyright"> Designed by Designed and Developed by <a href="*"> <span class="dm"> Dunia Media </span> </a> </p>
      </div> 
 
@@ -520,16 +520,40 @@
 
 <script>
 
+window.addEventListener('scroll', reveal);
+
+function reveal(){
+  var reveals = document.querySelectorAll('.reveal');
+
+  for(var i = 0; i < reveals.length; i++){
+
+    var windowheight = window.innerHeight;
+    var revealtop = reveals[i].getBoundingClientRect().top;
+    var revealpoint = 150;
+
+    if(revealtop < windowheight - revealpoint){
+      reveals[i].classList.add('active');
+    }
+    else{
+      reveals[i].classList.remove('active');
+    }
+  }
+}
+
+
+// ********** set date ************
+// select span
+const date = document.getElementById("date");
+date.innerHTML = new Date().getFullYear();
+
 
 console.log("working")
-// const fixedhead = document.querySelector(".fixed-nav");
 const head = document.querySelector(".hflex2");
+const head4 = document.querySelector(".hflex");
  const head2 = document.querySelector(".linkscroll");
  const head3 = document.querySelector(".linkscrolltext");
  const menuu = document.querySelector(".mqlist");
        const menul = document.querySelector(".mqul");
-//  const head3 = document.querySelector(".slideflexmq");
-//  const fixedhead = document.querySelector(".fixednav");
 
 
 window.addEventListener ("scroll", function () {
@@ -539,10 +563,12 @@ window.addEventListener ("scroll", function () {
    
    if (scrollHeight > headheight){
       head.classList.add("fixed-nav");
+      head4.classList.add("fixed-nav2");
       menul.style.top = "80px"
    }
    else{
     head.classList.remove("fixed-nav");
+    head4.classList.remove("fixed-nav2");
     menul.style.top = "140px"
    }
    })
